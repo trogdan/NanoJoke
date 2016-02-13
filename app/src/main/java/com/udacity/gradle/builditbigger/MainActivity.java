@@ -1,21 +1,28 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Context;
-import android.support.v4.util.Pair;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class MainActivity extends ActionBarActivity {
+import com.projectxanadu.displaybean.Zachtivity;
+
+public class MainActivity extends ActionBarActivity implements EndpointsAsyncTask.ResultListener{
+
+    @Override
+    public void handleAsyncResult(String result) {
+        Intent intent = new Intent(this, Zachtivity.class);
+        intent.putExtra(Zachtivity.JOKE_KEY, result);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -40,10 +47,8 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void tellJoke(View view) {
-
-        EndpointsAsyncTask task = new EndpointsAsyncTask();
-        task.execute(new Pair<Context, String>(this, "test"));
-        //Toast.makeText(this, mJoker.getJoke(), Toast.LENGTH_LONG).show();
+        EndpointsAsyncTask task = new EndpointsAsyncTask(this);
+        task.execute();
     }
 
 
