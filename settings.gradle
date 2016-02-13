@@ -1,0 +1,1 @@
+include ':app', ':jokebean', ':displaybean', ':backend'
