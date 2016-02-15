@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">Build it Bigger</string>
     <string name="action_settings">Settings</string>
-    <string name="banner_ad_unit_id">REPLACE_WITH_BANNER_ID</string>
 </resources>

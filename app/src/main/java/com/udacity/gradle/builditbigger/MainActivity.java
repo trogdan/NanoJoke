@@ -46,6 +46,11 @@ public class MainActivity extends ActionBarActivity implements EndpointsAsyncTas
         return super.onOptionsItemSelected(item);
     }
 
+    public void tellJoke()
+    {
+        tellJoke(null);
+    }
+
     public void tellJoke(View view) {
         EndpointsAsyncTask task = new EndpointsAsyncTask(this);
         task.execute();
