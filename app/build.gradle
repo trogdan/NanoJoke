@@ -6,6 +6,9 @@ android {
     dexOptions {
         javaMaxHeapSize "4g"
     }
+    lintOptions {
+        abortOnError false
+    }
     defaultConfig {
         applicationId "com.udacity.gradle.builditbigger"
         minSdkVersion 10
