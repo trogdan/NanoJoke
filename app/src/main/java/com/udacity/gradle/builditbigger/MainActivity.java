@@ -6,13 +6,18 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.projectxanadu.displaybean.Zachtivity;
 
 public class MainActivity extends ActionBarActivity implements EndpointsAsyncTask.ResultListener{
 
+    private ProgressBar mSpinner;
+
     @Override
     public void handleAsyncResult(String result) {
+        mSpinner.setVisibility(View.GONE);
+
         Intent intent = new Intent(this, Zachtivity.class);
         intent.putExtra(Zachtivity.JOKE_KEY, result);
         startActivity(intent);
@@ -21,7 +26,13 @@ public class MainActivity extends ActionBarActivity implements EndpointsAsyncTas
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
+        mSpinner = (ProgressBar)findViewById(R.id.progress_bar);
+        mSpinner.setVisibility(View.GONE);
+
+
     }
 
     @Override
@@ -52,6 +63,8 @@ public class MainActivity extends ActionBarActivity implements EndpointsAsyncTas
     }
 
     public void tellJoke(View view) {
+        mSpinner.setVisibility(View.VISIBLE);
+
         EndpointsAsyncTask task = new EndpointsAsyncTask(this);
         task.execute();
     }

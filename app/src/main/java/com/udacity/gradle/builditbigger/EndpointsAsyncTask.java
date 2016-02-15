@@ -39,6 +39,13 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
             myApiService = builder.build();
         }
 
+        // TODO Pause for just a second so the spinner always shows
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         try {
             return myApiService.getJoke().execute().getData();
         } catch (IOException e) {
