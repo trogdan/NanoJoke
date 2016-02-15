@@ -1,3 +1,6 @@
+NOTE TO INSTRUCTOR
+see ./app/src/free/res/values/strings.xml and replace ***REMOVED*** with ad ids
+
 # Gradle for Android and Java Final Project
 
 In this project, you will create an app with multiple flavors that uses
