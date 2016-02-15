@@ -2,7 +2,7 @@
 
     <string name="instructions">Press the button for a delicious joke!</string>
     <string name="button_text">Tell Joke</string>
-    <string name="banner_ad_unit_id">REPLACE_WITH_BANNER_ID</string>
-    <string name="interstitial_ad_unit_id">REPLACE_WITH_INTERSTITIAL_ID</string>
+    <string name="banner_ad_unit_id">***REMOVED***</string>
+    <string name="interstitial_ad_unit_id">***REMOVED***</string>
 
 </resources>
